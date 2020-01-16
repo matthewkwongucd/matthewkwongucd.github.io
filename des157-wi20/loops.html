@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Loop Examples</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+
+    <h1>Loop Examples</h1>
+    <script>
+
+        // for(var i = 0; i< 10; i++){
+        //     console.log(i + '\n');
+        // }
+
+        // var colors = ['red', 'blue', 'yellow', 'green'];
+        // for(var i = 0; i<4; i++){
+        //     console.log(colors.length + '\n');
+        // }
+
+        // var statement = "A string can be treated like an array";
+
+        // for( var i = 0; i < statement.length; i++){
+        //     console.log(statement[i] + '\n');
+        // }
+
+        var i = 0;
+        var text = "";
+        
+        while(i < 10){
+            text += `The value of i is ${i}, and i squared is  ${i * i} \n`;
+            i++;
+        }
+        
+        console.log(text);
+    </script>    
+</body>
+</html>
