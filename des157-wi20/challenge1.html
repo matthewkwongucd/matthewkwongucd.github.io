@@ -26,11 +26,23 @@
         console.log(newString); */
         
         var foods = ["apples", "pasta", "tacos", "pizza"];
-        // console.log(myString + foods[0]);
+
+        // for(var i = 0; i < foods.length; i++){
+        //     if (i % 2 == 0){
+        //         console.log(`${myString} ${foods[i].toUpperCase()}`);
+        //     }
+        //     else{
+        //         console.log(`${myString} ${foods[i]}`);
+        //     }
+        // }
 
         for(var i = 0; i < foods.length; i++){
+            if (i % 2 == 0){
+                foods[i] = foods[i].toUpperCase();
+            }
             console.log(`${myString} ${foods[i]}`);
         }
+        
     </script>
 </body>
 </html>
