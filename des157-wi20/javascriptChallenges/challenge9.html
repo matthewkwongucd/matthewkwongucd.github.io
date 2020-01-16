@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JavaScript Basic Challenges</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>JavaScript Basic Challenges</h1>
+    <h2>Challenge 9</h2>
+    <script>
+        var color = prompt("Enter a color!");
+        color = color.toLowerCase();
+        
+        if(color == "red" || color == "blue" || color == "green"){
+            console.log(`You picked a primary color: ${color}`);
+        }
+
+        else if(color == "orange" || color == "green" || color == "purple"){
+            console.log(`You picked a secondary color: ${color}`);
+        }
+
+        else{
+            console.log("You did not pick a primary or secondary color!");
+        }
+    </script>
+</body>
+</html>
