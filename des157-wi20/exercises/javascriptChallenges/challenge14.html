@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Challenge 14</title>
+  </head>
+  <body>
+    <h1>Challenge 14</h1>
+    <script>
+      var name = prompt("What's your name?", '');
+
+      function hello(name){
+        var greeting;
+
+        if(name == null || name == ''){
+          greeting = "You did not give me a name";
+        }
+        else{
+          greeting = `Hello ${name}, and welcome`;
+        }
+        return greeting;
+      }
+      console.log(hello(name));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Challenge 15</title>
+  </head>
+  <body>
+    <h1>Challenge 15</h1>
+    <script>
+      var name = prompt("What's your name?", '');
+      var foods = ["oranges", "chicken", "pizza", "chocolate", "mushrooms"]
+
+
+      function hello(name){
+        var greeting;
+
+        if(name == null || name == ''){
+          greeting = "You did not give me a name";
+        }
+        else{
+          greeting = `Hello ${name}, and welcome`;
+        }
+        return greeting;
+      }
+
+      function hospitality(name, gift){
+        hello();
+        console.log(hello(name));
+        for(i = 0; i < foods.length; i++){
+          console.log(`${name} would you like some ${foods[i]}?`);
+        }
+      }
+      hospitality();
+    </script>
+  </body>
+</html>
