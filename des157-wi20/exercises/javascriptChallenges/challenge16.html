@@ -2,10 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Challenge 15</title>
+    <title>Challenge 16</title>
   </head>
   <body>
-    <h1>Challenge 15</h1>
+    <h1>Challenge 16</h1>
     <script>
       var name = prompt("What's your name?", '');
       var foods = ["oranges", "chicken", "pizza", "chocolate", "mushrooms"]
@@ -23,12 +23,16 @@
         return greeting;
       }
 
+      function randomInt(min, max){
+        return Math.floor((max - min + 1) * Math.random() ) + min;
+      }
+
       function hospitality(name, foods){
         console.log(hello(name));
-        for(i = 0; i < foods.length; i++){
-          console.log(`${name} would you like some ${foods[i]}?`);
-        }
+        var randomFood = foods[randomInt(0, foods.length-1)];
+        console.log(`${name} would you like some ${randomFood}?`);
       }
+
       hospitality(name, foods);
     </script>
   </body>
