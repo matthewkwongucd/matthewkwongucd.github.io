@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Example 3</title>
+</head>
+<body>
+    <p class = "blue">Here is a paragraph</p>
+    <p>Here is more text</p>
+    <p class = "blue">Here is even more text</p>
+
+    <script>
+        var myText = document.getElementsByClassName("blue");
+        // console.log(myText);
+
+        for(var i = 0; i < myText.length; i++){
+            myText[i].style.color = "blue";
+        }
+    </script>
+</body>
+</html>
