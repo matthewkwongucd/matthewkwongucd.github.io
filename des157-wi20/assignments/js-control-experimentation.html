@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JS Flow Control Experimentation
+</title>
+  </head>
+  <body>
+    <p>Program that makes EvErY oThEr LeTtEr CaPiTaLiZeD</p>
+    <script>
+      var userInput = prompt("Insert a phrase:");
+
+      for(i = 0; i < userInput.length; i++){
+        if (i % 2 == 0){
+          userInput[i].toUpperCase();
+          console.log(userInput[i].toUpperCase());
+        }
+        else{
+          console.log(userInput[i]);
+        }
+      }
+    </script>
+  </body>
+</html>
