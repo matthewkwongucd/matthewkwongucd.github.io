@@ -1,5 +1,11 @@
 body{
   font-family: 'Open Sans', sans-serif;
+  position: relative;
+}
+
+p{
+  font-size: 18px;
+  line-height: 35px;
 }
 
 header{
@@ -61,8 +67,13 @@ section img{
   margin: auto;
 }
 
+footer{
+  color: black;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
 
-p{
-  font-size: 18px;
-  line-height: 35px;
+footer > p >  a {
+  color:black;
 }
