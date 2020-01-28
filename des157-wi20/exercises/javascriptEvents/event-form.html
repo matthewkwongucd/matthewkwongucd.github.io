@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Caputre Form Events</title>
+  </head>
+  <body>
+    <h1>JavaScript Events</h1>
+
+    <form method = "get">
+      <label>Type your name: <input type = "text" name = "name">
+      </label>
+      <input type = "submit" value = "Send">
+    </form>
+
+    <script>
+      var myForm = document.querySelector('form');
+
+      myForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        var data = document.querySelector("input").value;
+        alert(data);
+      });
+    </script>
+  </body>
+</html>

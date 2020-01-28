@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Events</title>
+  </head>
+  <body>
+    <h1>Key down event</h1>
+    <p>Press a key on the keyboard</p>
+
+    <script>
+      document.addEventListener('keydown', function(event){
+          // alert("a key was pressed!");
+          var whichKey = String.fromCharCode(event.which);
+
+          alert(`the ${whichKey} key was pressed`);
+      });
+    </script>
+  </body>
+</html>

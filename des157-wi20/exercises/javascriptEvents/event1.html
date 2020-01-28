@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title+Event Example 1></title>
+  </head>
+  <body>
+    <h1>Event Example 1</h1>
+    <button>Don't Press Me!</button>
+
+    <p><a href = "http://google.com">Go to Google</a></p>
+
+    <script>
+      var btn = document.querySelector('button');
+
+      // function ouch(){
+      //   alert("Oh no you didn't!");
+      // }
+      //
+      // btn.onclick = ouch;
+
+      // btn.onclick = function(){
+      //     alert("Oh no you didn't!");
+      // }
+
+
+      btn.addEventListener('click', function(){
+        event.target.style.backgroundColor = "red";
+        alert("Oh no you didn't!");
+      });
+
+      var googleLink = document.querySelector("a");
+
+      googleLink.addEventListener("click", function(event){
+          event.preventDefault();
+          alert("Sorry, no Google for you!");
+      });
+    </script>
+
+  </body>
+</html>
