@@ -3,13 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Miles to Kilometers Converter</title>
-	
+
 	<!--/ /-------- Normalize CSS --------/ /-->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
-	
+
 	<!--/ /-------- Google Fonts --------/ /-->
 	<link href="https://fonts.googleapis.com/css?family=Oswald|PT+Sans&display=swap" rel="stylesheet">
-	
+
 	<!--/ /-------- My Styles --------/ /-->
 	<link href="styles.css" rel="stylesheet">
 
@@ -18,19 +18,42 @@
 <body>
 
 	<h1>Miles to Kilometers Converter</h1>
-    
+
     <div class="container top">
     	<p>Type in a number of miles and click the button to convert the distance to kilometers.</p>
-        
+
         <form method="post" action="somephpfile.php" id="convert">
-        
+
         	<input type="text" name="distance" id="distance" placeholder="distance">
             <input type="submit" name="convertdist" value="Convert Distance">
-        
+
         </form>
     </div>
     <div class="container bottom" id="answer">
     	<h2 class="invisible">Answer goes here</h2>
     </div>
+
+
+		<script>
+
+		var output = document.querySelector(".invisible");
+		var form = document.querySelector('form');
+
+		form.addEventListener('submit', function(event){
+			event.preventDefault();
+			var num = parseInt(document.querySelector('input').value);
+
+			//check if input is number
+
+			if(num){
+				var conversion = input * 1.609344;
+				document.getElementById(".invisible").innerHTML = `${conversion} miles convers to ${conversion} kilometers`;
+			}
+
+			else{
+				alert("FUCK");
+			 }
+		 });
+		</script>
 </body>
 </html>
