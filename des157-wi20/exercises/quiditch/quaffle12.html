@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quaffle 12</title>
+</head>
+<body>
+
+    <h1>Death Eaters v.s. the Order of the Phoenix</h1>
+    <p>Pick a Death Eater</p>
+    <ul id="deatheaters">
+        <li><a href="#">Dolohov</a></li>
+        <li><a href="#">Rookwood</a></li>
+        <li><a href="#">Avery</a></li>
+        <li><a href="#">Bellatrix Lestrange</a></li>
+        <li><a href="#">Yaxley</a></li>
+        <li><a href="#">Lucius Malfoy</a></li>
+        <li><a href="#">Mulciber</a></li>
+        <li><a href="#">Selwyn</a></li>
+        <li><a href="#">Macnair</a></li>
+    </ul>
+
+    <p>Pick a member of the Order of the Phoenix</p>
+    <ul id="phoenix">
+        <li><a href="#">Mad Eye Moody</a></li>
+        <li><a href="#">Kingsley Shacklebolt</a></li>
+        <li><a href="#">Dedalus Diggle</a></li>
+        <li><a href="#">Minerva McGonagall</a></li>
+        <li><a href="#">Mundungus Fletcher</a></li>
+        <li><a href="#">Remus Lupin</a></li>
+        <li><a href="#">Sirius Black</a></li>
+        <li><a href="#">Arthur Weasley</a></li>
+        <li><a href="#">Tonks</a></li>
+    </ul>
+
+    <h2>Duelers</h2>
+    <div id="bttn-container"></div>
+
+    <div id="battle"></div>
+
+    <script>
+        var deScore = 0;
+        var ootpScore = 0;
+        var deathEaters = document.querySelectorAll("#deatheaters li a");
+        var phoenixMembers = document.querySelectorAll("#phoenix li a");
+        var battle = document.getElementById("battle");
+        var duelers = document.querySelector("h2");
+        var deChoice;
+        var pChoice;
+
+        for(var i=0; i<deathEaters.length; i++){
+            deathEaters[i].addEventListener("click", function(event){
+                deChoice = event.target.innerHTML;
+                event.target.style.color = "red";
+                event.preventDefault();
+            });
+        }
+
+        for(var i=0; i<phoenixMembers.length; i++){
+            phoenixMembers[i].addEventListener("click", function(event){
+                pChoice = event.target.innerHTML;
+                event.target.style.color = "red";
+                event.preventDefault();
+                addButton();
+            });
+        }
+
+        function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function addButton(){
+            if(deChoice && pChoice){
+                var battleBttn = document.createElement("button");
+                var bttnTxt = document.createTextNode("Start the Duel");
+                battleBttn.appendChild(bttnTxt);
+                document.getElementById("bttn-container").appendChild(battleBttn);
+
+                document.querySelector("button").addEventListener("click", function(){
+                    duelers.innerHTML = `${deChoice} goes up against ${pChoice}`;
+                    castSpell(deChoice, pChoice);
+                });
+            }
+        }
+
+        function castSpell(attacker, defender){
+            var dueler1 = attacker;
+            var dueler2 = defender;
+            setTimeout(function(){
+                var attackPower = getRandomInt(1, 10);
+
+                var defendPower = getRandomInt(1, 10);
+
+                if(attackPower > defendPower){
+                    battle.innerHTML += `<p style="color: red;">${attacker} attacks ${defender} with a killing spell</p>`;
+                    deScore = deScore + (attackPower - defendPower);
+                    if(deScore > 20){
+                        battle.innerHTML += `<p style="color: red;">it's a hit! ${defender} is killed by ${attacker}</p>`;
+                    }
+                    else {
+                        battle.innerHTML += `<p style="color: blue;">${defender} counters ${attacker}'s killing spell</p>`;
+                        castSpell(dueler1, dueler2);
+                    }
+                }
+                else if( attackPower < defendPower ){
+                    battle.innerHTML += `<p style="color: blue;">${defender} counter attacks ${attacker} with a spell</p>`;
+                    ootpScore = ootpScore + (defendPower - attackPower);
+                    if(ootpScore > 16){
+                        battle.innerHTML += `<p style="color: blue;">it's a hit! ${defender} defeats ${attacker}</p>`;
+                    }
+                    else {
+                        battle.innerHTML += `<p style="color: red;">${attacker} counters ${defender}'s spell</p>`;
+                        castSpell(dueler1, dueler2);
+                    }
+                }
+                else {
+                    battle.innerHTML += `<p style="color: blue;">${defender} ducks!</p>`;
+                    castSpell(dueler1, dueler2);
+                }
+                console.log(`deatheater score: ${deScore}`);
+                console.log(`phoenix score: ${ootpScore}`);
+
+            }, 1000);
+
+        }
+
+    </script>
+
+</body>
+</html>

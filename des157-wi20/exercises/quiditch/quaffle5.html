@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quaffle 5</title>
+</head>
+<body>
+
+    <h1>Gryffindor goes up against Slytherin in Quidditch</h1>
+    <button id="match">Who Wins?</button>
+    <p>Click the button to see who wins</p>
+
+    <script>
+
+        var bttn = document.getElementById("match");
+        var winnerElement = document.querySelector("p");
+
+        bttn.addEventListener("click", function){
+            var randomNum = Math.ceil(Math.random() * 10);
+            if(randomNum < 6){
+                winnerElement.innerHTML = "Gryffindor Wins!";
+                winnerElement.style.color = "red";
+            }
+            else {
+                winnerElement.innerHTML = "Syltherin Wins!";
+                winnerElement.style.color = "green";
+            }
+        });
+
+    </script>
+
+</body>
+</html>

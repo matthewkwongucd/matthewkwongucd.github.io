@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quaffle 2</title>
+</head>
+<body>
+
+    <h1>Malfoy Attacks!</h1>
+    <p>Round 2</p>
+
+    <script>
+
+        var spells = ["Expelliarmus", "Mobilicorpus", "Impedimenta", "Petrificus Totalus"];
+        var counterSpell = parseInt(prompt("Malfoy attacks. Pick a number from 1 - 4 to choose a spell", ""));
+        if(counterSpell > 0 && counterSpell < 5){
+            document.querySelector("p").innerHTML = `You counter with ${spells[counterSpell-1]}`;
+        }
+        else {
+            document.querySelector("p").innerHTML = "You didn't enter a number from 1 - 4";
+        }
+
+    </script>
+
+</body>
+</html>

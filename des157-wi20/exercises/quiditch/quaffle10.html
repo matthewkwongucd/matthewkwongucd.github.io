@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quaffle 10</title>
+    <style>
+        #bar-container{
+            width: 250px;
+            height: 75px;
+            border: 2px solid #666;
+            position: relative;
+        }
+        #bar{
+            width: 0;
+            height: 75px;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>The Dementors are Coming!</h1>
+    <button>EXPECTO PATRONUM!</button>
+    <p>Click the button to cast a patronus</p>
+    <div class="result"></div>
+    <div id="bar-container">
+        <div id="bar"></div>
+    </div>
+
+    <script>
+
+        var bttn = document.querySelector("button");
+        var patronuses = ["Stag", "Doe", "wolf", "cat", "weasel", "otter"];
+        var result = document.querySelector(".result");
+        var bar = document.getElementById('bar');
+
+        function applyCSS(power, color){
+            bar.style.transition = "all 1s";
+            bar.style.width = power * 10 + "%";
+            bar.style.backgroundColor = color;
+        }
+
+        bttn.addEventListener("click", function(){
+            var spellStrength = Math.ceil(Math.random() * 10);
+            var animal = patronuses[Math.floor(Math.random() * patronuses.length)];
+            result.innerHTML = `<p>You try to cast your ${animal} patronus</p>`;
+            if( spellStrength < 4 ){
+                result.innerHTML += `<p>You need to think happier thoughts. Your patronus is too weak!</p>`;
+                applyCSS(spellStrength, "red");
+            }
+            else if( spellStrength > 3 && spellStrength < 8){
+                result.innerHTML += `<p>Your patronus is strong and the dementors don't like it!</p>`;
+                applyCSS(spellStrength, "yellow");
+            }
+            else {
+                result.innerHTML += `<p>Dementors scatter from your powerful patronus</p>`;
+                applyCSS(spellStrength, "green");
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

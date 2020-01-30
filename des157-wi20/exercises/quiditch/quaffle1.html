@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quaffle 1</title>
+</head>
+<body>
+
+    <h1>The Best House</h1>
+    <p>Round 1</p>
+
+    <script>
+
+        var houses = ["Gryffindor", "Hufflepuff", "Slytherin", "Ravenclaw"];
+        var userChoice = parseInt(prompt("Enter a number from 1 - 4 to choose the best house", ""));
+        if(userChoice > 0 && userChoice < 5){
+            document.querySelector("p").innerHTML = `The best house is ${houses[userChoice-1]}`;
+        }
+        else {
+            document.querySelector("p").innerHTML = "You didn't enter a number from 1 - 4";
+        }
+
+    </script>
+
+</body>
+</html>

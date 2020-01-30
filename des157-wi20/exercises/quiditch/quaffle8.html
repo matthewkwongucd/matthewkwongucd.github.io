@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quaffle 8</title>
+    <style>
+        body { margin: 0; padding: 50px; }
+    </style>
+</head>
+<body>
+
+    <h1>Put on the sorting hat and see what house you're in!</h1>
+    <button>Sorting Hat</button>
+    <p>Click the button to get sorted!</p>
+
+    <script>
+        var bttn = document.querySelector("button");
+        var welcome = document.querySelector("p");
+        var houses = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"];
+        var colors = [
+            ["#ae0001", "#d3a625" ],
+            ["#1a472a", "#aaaaaa"],
+            ["#ecb939", "#372e29"],
+            ["#0e1a40", "#946b2d"]
+        ];
+
+        function chooseHouse(){
+            var yourHouse = houses[Math.floor(Math.random() * houses.length)];
+            return yourHouse;
+        };
+
+        function updatePage(getHouse){
+            var yourHouse = getHouse;
+            switch(yourHouse){
+                case "Gryffindor": decoratePage(colors[0]);
+                    welcome.innerHTML=`Welcome to ${yourHouse}`; break;
+                case "Slytherin": decoratePage(colors[1]);
+                    welcome.innerHTML=`Welcome to ${yourHouse}`; break;
+                case "Hufflepuff": decoratePage(colors[2]);
+                    welcome.innerHTML=`Welcome to ${yourHouse}`; break;
+                case "Ravenclaw": decoratePage(colors[3]);
+                    welcome.innerHTML=`Welcome to ${yourHouse}`; break;
+                default: console.log("something went wrong");
+            }
+        };
+
+        function decoratePage(colors){
+            var theme = colors;
+            document.querySelector("body").style.background = theme[0];
+            document.querySelector("body").style.color = theme[1];
+            document.querySelector("body").style.borderTop = `50px solid ${theme[1]}`;
+        };
+
+        bttn.addEventListener("click", function(){
+            updatePage(chooseHouse());
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quaffle 4</title>
+</head>
+<body>
+
+    <h1>Are You a Muggle?</h1>
+    <p>Round 4</p>
+
+    <script>
+
+        var magical = parseInt(prompt("Are you magical or are you a muggle? Enter a number", ""));
+        if(magical % 2 === 0){
+            document.querySelector("p").innerHTML = "You're magical, here's an invitation to attend Hogwarts";
+        }
+        else {
+            document.querySelector("p").innerHTML = "Sorry, no invitation for you!";
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quaffle 11</title>
+    <style>
+        #bar-container{
+            width: 250px;
+            height: 75px;
+            border: 2px solid #666;
+            position: relative;
+        }
+        #bar{
+            width: 0;
+            height: 75px;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>S.P.E.W.</h1>
+    <button name="hat">Throw a hat!</button>
+    <button name="sock">Throw a sock!</button>
+    <p>Click a button to throw clothes at the house elves!</p>
+    <p id="result"></p>
+    <div id="hits">You freed <span class="numfreed">0</span> house <span class="plural">elves</span></div>
+    <div id="misses">You failed to free <span class="numfreed">0</span> house <span class="plural">elves</span></div>
+
+    <script>
+
+        var bttns = document.querySelectorAll("button");
+        var hit = 0;
+        var miss = 0;
+        var result = document.getElementById("result");
+        var hitNum = document.querySelector("#hits .numfreed");
+        var missNum = document.querySelector("#misses .numfreed");
+        var hitsSingular = document.querySelector("#hits .plural");
+        var missesSingular = document.querySelector("#misses .plural");
+
+        function returnMessage(item, selector){
+            var messages = [
+            `Doby snatched the ${item} from mid-air!`,
+            `The other house elves ran away from the ${item} you threw`,
+            `The house elves scattered and Crookshanks stole your ${item}`,
+            `Score! You freed a house elf with your ${item}`
+            ];
+            var selectedMessage = messages[selector];
+            return selectedMessage;
+        }
+
+        for( var i=0; i<bttns.length; i++){
+            bttns[i].addEventListener("click", function(){
+                var thisItem = event.target.getAttribute("name");
+                var aim = Math.ceil(Math.random() * 10);
+                if(aim < 10){
+                    miss++;
+                    var randMessage = Math.floor(Math.random() * 2);
+                    result.innerHTML = returnMessage(thisItem, randMessage);
+                    missNum.innerHTML = miss;
+                    if( miss !== 1 ){
+                        missesSingular.innerHTML = "elves";
+                    }
+                    else {
+                        missesSingular.innerHTML = "elf";
+                    }
+                }
+                else {
+                    hit++;
+                    result.innerHTML = returnMessage(thisItem, 3);
+                    hitNum.innerHTML = hit;
+                    if( hit !== 1 ){
+                        hitsSingular.innerHTML = "elves";
+                    }
+                    else{
+                        hitsSingular.innerHTML = "elf";
+                    }
+                }
+
+            });
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quaffle 9</title>
+</head>
+<body>
+
+    <h1>Mad Eye Moody Trasfigures Draco Malfoy</h1>
+    <button>Transfigure!</button>
+    <p>Click the button to see what happens to Draco Malfoy</p>
+
+    <script>
+
+        var bttn = document.querySelector("button");
+        var effect = document.querySelector("p");
+        var shapes = ["ferret", "toad", "owl", "spider"];
+        var imgUrls = [
+            "http://vetmed.tamu.edu/files/vetmed/news/pet-talk/20151022-ferret.jpg",
+            "https://3c1703fe8d.site.internapcdn.net/newman/csz/news/800/2014/canetoadsdem.jpg",
+            "https://i.etsystatic.com/6220876/r/il/0b6e2a/373873960/il_570xN.373873960_2exh.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/e/e2/Callilepis_nocturna.jpg",
+            "https://pixel.nymag.com/imgs/daily/vulture/2018/09/06/06-minerva-mcgonagall.w700.h700.jpg"
+        ];
+
+        function addImage(index){
+            var newImg = document.createElement("img");
+            newImg.src = imgUrls[index];
+            document.getElementsByTagName('body')[0].appendChild(newImg);
+        }
+
+        bttn.addEventListener("click", function(){
+
+            var image = document.querySelector("img");
+
+            if(image){
+                var body = document.getElementsByTagName("body")[0];
+                body.removeChild(image);
+            }
+
+            var randomNum = Math.floor(Math.random() * (shapes.length +2));
+
+            if( randomNum < shapes.length){
+                effect.innerHTML=`Malfoy was turned into a ${shapes[randomNum]}`;
+                switch(randomNum){
+                    case 0: addImage(0); break;
+                    case 1: addImage(1); break;
+                    case 2: addImage(2); break;
+                    case 3: addImage(3); break;
+                    default: console.log("something went wrong");
+                }
+            }
+            else {
+                effect.innerHTML = "Moody was stopped by Minerva McGonagall!";
+                addImage(4);
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

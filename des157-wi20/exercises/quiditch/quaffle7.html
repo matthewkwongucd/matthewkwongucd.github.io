@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quaffle 7</title>
+</head>
+<body>
+
+    <h1>Voldemort attacks Harry, which counter spell should he use?</h1>
+    <button>Expelliarmus</button>
+    <button>Mobilicorpus</button>
+    <button>Impedimenta</button>
+    <button>Petrificus Totalus</button>
+    <p>Click a button to choose a spell</p>
+
+    <script>
+
+        var bttn = document.querySelectorAll("button");
+        var battle = document.querySelector("p");
+        var voldeSpells = ["Avada Kedavra", "Crucio", "Confringo", "Sectumsempra", "Fiendfyre"];
+
+        function voldemortAttack(){
+            var attack = voldeSpells[Math.ceil(Math.random() * 5)];
+            return attack;
+        }
+
+        for( var i=0; i<bttn.length; i++){
+
+            bttn[i].addEventListener("click", function(event){
+                var spell = event.target.innerHTML;
+                var HarrySpellPower = Math.floor(Math.random() * 10);
+                var attack = voldemortAttack();
+                var voldemortSpellPower = Math.ceil(Math.random() * 10);
+                battle.innerHTML = `You chose ${spell} and Voldemort used ${attack}`;
+
+                if(HarrySpellPower > voldemortSpellPower){
+                    battle.innerHTML += "<br> Harry Potter Wins!";
+                }
+                else if(HarrySpellPower < voldemortSpellPower){
+                    battle.innerHTML += "<br> Voldemort overpowered Harry!";
+                }
+                else {
+                    battle.innerHTML += "<br> It was a tie!";
+                }
+            });
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Event Challenges: Challenge 27</title>
+  </head>
+  <body>
+    <h1>JavaScript Event Challenges: Challenge 27</h1>
+
+    <form>
+      <label>Enter a number<input type = "text"></label>
+      <input type = "submit" value = "send number">
+    </form>
+
+    <script>
+      var h1 = document.querySelector("h1");
+      var form = document.querySelector('form');
+
+      form.addEventListener('submit', function(event){
+        event.preventDefault();
+        var num = parseInt(document.querySelector('input').value);
+
+        if(num){
+          h1.style.fontSize = num + "px";
+        }
+        else{
+          alert("enter a number!");
+        }
+      });
+
+
+
+    </script>
+  </body>
+</html>
