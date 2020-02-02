@@ -46,12 +46,13 @@
 			//check if input is number
 
 			if(num){
-				var conversion = input * 1.609344;
-				document.getElementById(".invisible").innerHTML = `${conversion} miles convers to ${conversion} kilometers`;
+				var conversion = num * 1.609344;
+				document.querySelector(".invisible").innerHTML = `${num} miles convers to ${conversion.toFixed(3)} kilometers`;
+				document.querySelector(".invisible").style.color = "black";
 			}
 
 			else{
-				alert("FUCK");
+				alert("Please enter a number");
 			 }
 		 });
 		</script>
