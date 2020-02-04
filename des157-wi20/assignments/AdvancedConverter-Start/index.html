@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Distance Converter</title>
+
+	<!--/ /-------- Normalize CSS --------/ /-->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+	<!--/ /-------- Google Fonts --------/ /-->
+	<link href="https://fonts.googleapis.com/css?family=Oswald|PT+Sans&display=swap" rel="stylesheet">
+
+	<!--/ /-------- My Styles --------/ /-->
+	<link href="styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<h1>Miles to Kilometers Converter</h1>
+
+    <div class="container top">
+    	<p>Type in a number of miles and click the button to convert the distance to kilometers.</p>
+
+        <form method="post" action="somephpfile.php" id="convert">
+
+        	<input type="text" name="distance" id="distance" placeholder="distance">
+            <input type="submit" name="convertdist" value="Convert Distance">
+
+        </form>
+    </div>
+    <div class="container bottom" id="answer">
+    	<h2 class="invisible">Answer goes here</h2>
+    </div>
+
+    <p id="directions">Press the "K" key to switch to kilometer converstion, press the "M" key to switch to mile conversion</p>
+
+		<script>
+			var start = 'M';
+
+			document.addEventListener('keydown', function(event){
+			 var keyPressed = event.which;
+			 switch (keyPressed) {
+				 //K
+				 case 75:
+				 start = 'K';
+				 document.querySelector("h1").innerHTML = `Kilometers to Miles Converter`; break;
+
+				 // M
+				 case 77:
+			 	 start = 'M';
+				 document.querySelector("h1").innerHTML = `Miles to to Kilometers Converter`; break;
+			 }
+			});
+
+			//Calculation Function. Returns converted value that is displayed to the user.
+			function calculate(num, start) {
+				if (start == 'M') {
+					var kiloConverted = num * 1.609344;
+					// rounds 3 decimal places
+					var kiloRounded = Math.round(kiloConverted*1000) / 1000;
+					return `${num} miles converts to ${kiloRounded} kilometers`;
+				}
+				else if (start == 'K') {
+					var milesConverted = num * 0.621371192;
+					// rounds 3 decimal places
+					var milesRounded = Math.round(milesConverted*1000) / 1000;
+					return `${num} kilometers converts to ${milesRounded} miles`;
+				}
+			}
+
+
+
+			var form = document.querySelector("form");
+			form.addEventListener("submit", function(event) {
+
+				event.preventDefault();
+				var userInput = document.querySelector("input").value;
+				var userNum = parseFloat(userInput);
+				var result;
+
+				if (userNum) {
+					result = calculate(userNum, start);
+				}
+				else {
+					result = "Please enter a number";
+				}
+
+				document.querySelector(".invisible").style.color = "black";
+				document.querySelector(".invisible").innerHTML = result;
+			});
+
+		</script>
+</body>
+</html>
