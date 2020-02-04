@@ -56,6 +56,12 @@ section{
   margin-top: 5%;
   margin-left: 20%;
   margin-right: 20%;
+  color: #404040;
+
+}
+
+section h1{
+  color: black;
 }
 
 section h2{
@@ -63,6 +69,8 @@ section h2{
 }
 
 section img{
+  padding-top:20px;
+  padding-bottom:20px;
   display: block;
   margin: auto;
 }
