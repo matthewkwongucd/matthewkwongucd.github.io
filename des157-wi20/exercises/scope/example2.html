@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Example 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Example of Scope</h1>
+    <p>Here is a paragraph</p>
+    <p>Here is a paragraph</p>
+    <p>Here is a paragraph</p>
+    
+    <script>
+        (function(){
+            "use strict"
+            
+            oops = "i forgot to use var when declaring this"
+
+            var myPs = document.querySelectorAll("p");
+    
+            for(var i = 0; i < myPs.length; i++){
+                myPs[i].style.color = "red";
+            }
+        }() );
+        
+        console.log(myPs);
+    </script>
+</body>
+</html>

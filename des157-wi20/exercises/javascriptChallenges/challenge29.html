@@ -18,23 +18,6 @@
 
     <p>Scroll down!</p>
 
-    <script>
-
-    var pageTop;
-    var body = document.querySelector('body');
-
-    window.addEventListener('scroll', function(){
-      pageTop = window.pageYOffSet || document.documentElement.scrollTop;
-
-      switch (true) {
-        case pageTop < 500: body.className = "one"; break;
-        case pageTop < 1000: body.className = "two"; break;
-        case pageTop < 1500: body.className = "three"; break;
-        case pageTop < 2000: body.className = "four"; break;
-
-        default: body.className = "five";
-      }
-    });
-    </script>
+    <script src = "script29.js"> </script>
   </body>
 </html>

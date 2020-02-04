@@ -12,35 +12,6 @@
     <button>Add a paragraph</button>
     <button>Remove paragraph</button>
 
-    <script>
-      var divTag = document.querySelector('div');
-      var btnAdd = document.querySelectorAll('button')[0];
-      var btnDelete = document.querySelectorAll('button')[1];
-      var paragraphCount = 1;
-
-      btnAdd.addEventListener('click', function(){
-        paragraphCount ++;
-        var newParagraph = document.createElement('p');
-        var text = document.createTextNode(`This is paragraph ${paragraphCount}`);
-
-        newParagraph.appendChild(text);
-        divTag.appendChild(newParagraph);
-      });
-
-
-// Remove paragraph
-      btnDelete.addEventListener('click', function(){
-
-        if(paragraphCount > 1){
-          divTag.removeChild(divTag.children[paragraphCount-1])
-          console.log(paragraphCount);
-          paragraphCount --;
-        }
-        else{
-          alert("Don't delete the last paragraph!");
-        }
-      });
-
-    </script>
+    <script src = "script26.js"></script>
   </body>
 </html>

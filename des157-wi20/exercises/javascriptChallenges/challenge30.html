@@ -23,22 +23,6 @@
     <p>Press the F key to turn the page cornflowerblue</p>
     <p>Press the G key to turn the page darkgoldenrod</p>
 
-    <script>
-    var body = document.querySelector('body');
-
-    document.addEventListener('keydown', function(event){
-      var keyPressed = event.which;
-
-      switch (keyPressed) {
-        case 66: body.className = "one"; break;
-        case 86: body.className = "two"; break;
-        case 67: body.className = "three"; break;
-        case 70: body.className = "four"; break;
-        case 71: body.className = "five"; break;
-
-        default: alert("Press one of the specified keys!");
-      }
-    });
-    </script>
+    <script src = "script30.js"></script>
   </body>
 </html>
