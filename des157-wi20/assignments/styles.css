@@ -1,0 +1,10 @@
+input, label {
+    display: block;
+    margin: 20px;
+    font-size: 20px;
+}
+
+#submit{
+    padding: 20px;
+    width: 200px;
+}
