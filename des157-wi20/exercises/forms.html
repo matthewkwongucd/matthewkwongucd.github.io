@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+
+    <style>
+        input, label {
+            display: block;
+        }
+
+        textarea {
+            width: 400px;
+            height: 40px;
+        }
+    </style>
+
+</head>
+<body>
+    <form>
+
+        <label for = "yourname">Your Name</label>
+        <input type = "text" id = "yourname" placeholder = "Ex: Bob">
+
+        <label for = "sw">Star Wars
+            <input type = "checkbox" name = "movie" value = "Star Wars" id = "sw">
+        </label>
+
+        <label for  = "f2">Frozen 2</label>
+        <input type = "radio" name = "movie" value = "Frozen 2" id = "f2">
+
+        <label for  = "p">Parasite</label>
+        <input type = "radio" name = "movie" value = "Paraasite" id = "p">
+
+
+        <textarea>Write me something nice</textarea>
+
+        <input type = "submit" value = "send the form!">
+
+
+        
+        <script>
+            document.getElementById('myform').addEventListener('submit', function(){
+                event.preventDefault();
+            });
+        </script>
+    </form>    
+</body>
+</html>
