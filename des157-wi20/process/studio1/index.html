@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <link href="styles.css" rel = "stylesheet">
+    <title>UC Davis Mad Lib</title>
+
+</head>
+<body>
+  <div id = "opacity-filter" class="invisible" ></div>
+
+  <img src = "images/cow.png" id = "cow" alt = "Cow image">
+
+  <div id = "left-side">
+    <div id = "left-content">
+      <h1>UC Davis Mad Lib</h1>
+      <p>Get ready for the craziest story on campus!</p>
+      <form id="myform">
+
+              <input type="text" placeholder="noun" id="noun1">
+              <input type="text" placeholder="place" id="place">
+              <input type="text" placeholder="noun" id="noun2">
+              <input type="text" placeholder="adjective" id="adjective">
+              <input type="text" placeholder="verb" id = "verb1">
+
+              <input type="submit" value="See Mad Lib!">
+      </form>
+    </div>
+  </div>
+
+
+  <div id = "right">
+  </div>
+
+
+  <div class="invisible" id="madlib">
+      <p>Madlib will go here! The class is
+         set initially to invisible, which is set in the styles above to
+         display: none. When the mad lib is submitted, this class is swapped.
+         You could change the styling a lot. Add a css transition to have the
+         mad lib fade in, or fly in or have some other effect.
+      </p>
+  </div>
+
+
+  <footer>
+    <p>
+      <a href="&#109;&#097;&#116;&#107;&#119;&#111;&#110;&#103;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">Email</a>
+      /
+      <a href="https://validator.w3.org/check?uri=referer">Valid HTML</a>
+      /
+      <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
+    </p>
+  </footer>
+
+  <script src = "script.js"></script>
+</body>
+</html>
