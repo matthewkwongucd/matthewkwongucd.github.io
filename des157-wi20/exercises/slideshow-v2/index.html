@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Slide Show 2</title>
+	<link href="styles.css" rel="stylesheet">
+	<style>
+	.fadeinimg {
+    animation: fadein 2s;
+	}
+
+	@keyframes fadein {
+	    from {
+	        opacity: 0;
+	    }
+	    to {
+	        opacity: 1;
+	    }
+		}
+	</style>
+</head>
+
+<body>
+
+    <div id="content">
+        <img src="slides/image1.jpg" alt="slideshow image" id="myimage">
+    </div>
+
+    <p id="links">
+		<a href="#" id="previous">previous</a>
+		<a href="#" id="next">next</a>
+	</p>
+
+	<script src = "script.js"></script>
+</body>
+</html>

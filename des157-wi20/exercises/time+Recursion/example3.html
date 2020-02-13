@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Example 3</title>
+
+    <style>
+      body{padding-top:100px;}
+
+      .one{
+        width: 1000px;
+        height: 1000px;
+        background: #910104;
+        border-radius: 50%;
+        margin: auto;
+        transition: all 2s;
+      }
+
+      .two{
+        width: 500px;
+        height: 500px;
+        background: #1b2f6b;
+        border-radius: 50%;
+        margin:auto;
+        transition: all 2s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id = "thediv" class = "one"></div>
+
+    <script>
+      const theDiv = document.getElementById("thediv");
+      let currentClass = theDiv.getAttribute("class");
+
+      function classRotator(){
+        if(currentClass == "one"){
+          setTimeout( function(){
+            theDiv.setAttribute("class", "two");
+            currentClass = "two";
+            classRotator(); }, 2000);
+        }
+        else{
+          setTimeout(function(){
+            theDiv.setAttribute("class", "one");
+            currentClass = "one";
+            classRotator(); }, 2000);
+        }
+      };
+
+      classRotator();
+    </script>
+  </body>
+</html>
