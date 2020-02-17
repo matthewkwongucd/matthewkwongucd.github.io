@@ -7,6 +7,7 @@ body{
 h1{
   font-weight: 700;
   font-size: 40px;
+  margin-bottom: 0px;
 }
 
 
@@ -21,14 +22,15 @@ h1{
   background-color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   min-width: 350px !important;
+  width: 400px;
   height: 450px;
-  margin-bottom: 50px;
   transition: 0.3s;
+  padding: 10px;
 }
 
 .image{
   background-color:#CED3D3;
-  height: 85%;
+  height: 400px;
   display: flex;
   justify-content: center;
 }
@@ -41,17 +43,19 @@ h1{
   opacity: 0.9;
 }
 
-#text{
-  height: 100px;
-  padding:20px;
+
+#notebook, #sunglasses, #remote{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
 }
 
-#text h2{
+h2{
   font-size: 25px;
 }
 
-#text p{
-  font-size: 20px;
+p{
+  font-size: 17px;
 }
 
 .invisible{
@@ -76,22 +80,24 @@ footer > p >  a {
   color:black;
 }
 
-#text{
-  margin-bottom: 100px;
-}
 
 
 @media only screen and (min-width: 600px) {
    .img-wrapper{
      flex-direction: row;
-     justify-content: space-between;
    }
 
    .polaroid{
      margin: 20px;
    }
 
-   #text{
+   #notebook-text, #sunglasses-text, #remote-text{
+     max-width: 350px !important;
+     margin-left: 20px;
+     margin-right: 20px;
+   }
+
+   #notebook, #sunglasses, #remote{
      margin-bottom: 0px;
    }
 
