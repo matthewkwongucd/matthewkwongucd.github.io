@@ -1,18 +1,16 @@
 body{
   font-family: 'Roboto', sans-serif;
-  margin-left: 40px;
-  margin-right: 40px;
 }
 
 h1{
+  text-align: center;
   font-weight: 700;
   font-size: 40px;
   margin-bottom: 0px;
 }
 
-
-.img-wrapper{
-  max-width: 100%;
+.wrapper{
+  /* padding: 20px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,7 +19,7 @@ h1{
 .polaroid{
   background-color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  min-width: 350px !important;
+  /* max-width: 350px !important; */
   width: 400px;
   height: 450px;
   transition: 0.3s;
@@ -47,7 +45,14 @@ h1{
 #notebook, #sunglasses, #remote{
   display: flex;
   flex-direction: column;
+  align-items: center;
+
   margin-bottom: 50px;
+}
+
+#notebook-text, #sunglasses-text, #remote-text{
+  max-width: 350px !important;
+  padding: 20px;
 }
 
 h2{
@@ -67,7 +72,6 @@ p{
 }
 
 footer{
-  z-index: 4;
   text-align: center;
   width: 100%;
   bottom:0;
@@ -83,7 +87,12 @@ footer > p >  a {
 
 
 @media only screen and (min-width: 600px) {
-   .img-wrapper{
+
+  body{
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+   .wrapper{
      flex-direction: row;
    }
 
@@ -102,6 +111,6 @@ footer > p >  a {
    }
 
    footer{
-     position: absolute;
+     position: static;
    }
 }
