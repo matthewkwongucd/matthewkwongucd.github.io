@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objects</title>
+</head>
+<body>
+    <h1>Object Constructor</h1>
+    <script>
+        function person(first, last, age, eye){
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+
+        var myFather = new person("John", "Doe", 50, "blue");
+        var myMother = new person("Sally", "Rally", 48, "green");
+
+        console.log(myFather.eyeColor);
+    </script>
+</body>
+</html>
