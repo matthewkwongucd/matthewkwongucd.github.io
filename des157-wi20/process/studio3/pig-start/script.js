@@ -54,8 +54,8 @@
         actionArea.innerHTML = '';
         
         // random number from 1-6 
-        gameData.roll1 = Math.ceil(Math.random()*6);
-        gameData.roll2 = Math.ceil(Math.random()*6);
+        gameData.roll1 = Math.ceil(Math.random()*4);
+        gameData.roll2 = Math.ceil(Math.random()*4);
         
         game.innerHTML = `<p>Roll the dice for the ${gameData.players[gameData.index]}</p>`;
         
@@ -72,12 +72,45 @@
             // 2. set this player's score to 0
             gameData.score[gameData.index] = 0;
             // 3. swap the game index 
-            gamedata.index ? gameData.index = 0 : gamedata.index = 1; 
+            gameData.index ? gameData.index = 0 : gameData.index = 1; 
             // 4. show the current score
             setTimeout(function(){
                 setUpTurn();
             }, 2000);
         }
+
+
+        // if two 2's are rolled... DOUBLE TROUBLE
+        else if( gameData.roll1 === 2  && gameData.roll2 === 2 ){
+            console.log("Double Trouble! * 2 baby!");
+            console.log(gameData.score);
+            
+            // 1. Update this user's score
+            gameData.score[gameData.index] = gameData.score[gameData.index] * 2;
+            
+            // 2. add buttons to roll or pass
+            actionArea.innerHTML = '<button id="rollagain">Roll again</button> or <button id="pass">Pass</button>';
+      
+
+            game.innerHTML += `<p>DOUBLE TROUBLE! TIMES 2 YOUR SCORE!</p>`;
+
+            // 3. add click handlers for those two buttons
+            document.getElementById('rollagain').addEventListener("click", function(){ 
+                throwDice();
+            });
+
+            // 
+            document.getElementById('pass').addEventListener("click", function(){
+                gameData.index ? gameData.index = 0 : gameData.index = 1;
+                setUpTurn();
+            });
+
+            // 4. Check to see if this user has passed the threshold for winning      
+            console.log("check to see if the player won!");
+            checkWinningCondition();
+        }
+
+        
         // if either die is a 1...
         else if(gameData.roll1 === 1 || gameData.roll2 === 1){
             console.log("one of the two dice was a 1");

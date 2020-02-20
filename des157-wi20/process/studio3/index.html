@@ -3,23 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game of PIG</title>
+    <title>Tic Tac Toe</title>
+
+    <style>
+
+        
+        #row1, #row2, #row3{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            /* border: solid 2px black; */
+        }
+
+        .box{
+            position: relative;
+            min-height: 200px;
+            min-width: 200px;
+            box-sizing: border-box;
+            border: solid 10px #396177;
+        }
+        
+        #row1 > #one{
+            border-top: none; 
+            border-left: none; 
+        }
+
+        #row1 > #two{
+            border-top: none; 
+        }
+
+
+        #row1 > #three{
+            border-top: none; 
+            border-right: none; 
+        }
+
+
+        /* row 2 */
+
+        #row2 > #four{
+            border-left: none; 
+        }
+
+
+        #row2 > #six{
+            border-right: none; 
+        }
+
+
+        /* row 3 */
+        #row3 > #seven{
+            border-bottom: none; 
+            border-left: none; 
+        }
+        
+        #row3 > #eight{
+            border-bottom: none; 
+        }
+
+        #row3 > #nine{
+            border-bottom: none; 
+            border-right: none; 
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Game of PIG</h1>
-    <p>There are two players. The player whose turn it is rolls the dice. The total of the roll is added to the current player's score, unless either die comes up as a “one”. If this happens, this player's turn is over, and it is the other player’s turn. After each roll, the current player can either roll again, (assuming a “one” was not rolled) or if the current player feels that luck is running thin, they can pass to the other player. The first player to get 30 points or higher wins.</p> 
-    <p>Oh, and if you roll two “ones” (snake eyes), your current score gets zeroed out. So don’t do that.</p>
 
-    <div id="gamecontrol">
-        <h2>Start a Game</h2>
-        <button id="startgame">Randomly Pick the First Player, and Start the Game</button>
-    </div>
 
     <div id="game"></div>
     <div id="actions"></div>
     <div id="score"></div>
 
+    <div id = "board">
+        <div id = "row1">
+            <div class = "box" id = "one"></div>
+            <div class = "box" id = "two"></div>
+            <div class = "box" id = "three"></div>
+        </div>
+
+        <div id = "row2">
+            <div class = "box" id = "four"></div>
+            <div class = "box" id = "five"></div>
+            <div class = "box" id = "six"></div>
+        </div>
+
+        <div id = "row3">
+            <div class = "box" id = "seven"></div>
+            <div class = "box" id = "eight"></div>
+            <div class = "box" id = "nine"></div>
+        </div>
+    </div>
+
+    <div id="gamecontrol">
+        <button id="startgame">START GAME</button>
+        <p id = "whos-turn"></p>
+    </div>
+
+
     <script src = "script.js"> </script>
-    
 </body>
 </html>
