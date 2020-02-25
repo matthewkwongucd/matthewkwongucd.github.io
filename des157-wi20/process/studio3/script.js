@@ -21,7 +21,7 @@
         roll2: 0,
         rollSum: 0,
         index: 0,
-        gameEnd: 9
+        gameEnd: 99
     }
 
 
