@@ -1,0 +1,99 @@
+body {
+	font-family: Arial;
+	color: #333;
+	padding-top: 200px;
+}
+
+header {
+	background: rgba(217, 217, 217, 0.9);
+	width: 100%;
+	position: fixed;
+	top: 0;
+}
+
+header h1 {
+	text-align: center;
+}
+
+p {
+	line-height: 1.5em;
+}
+
+img {
+	width: 100%;
+}
+
+section {
+	width: 75%;
+	margin: 0 auto 150px auto;
+	padding: 25px;
+	box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.75);
+}
+
+/*************** Navigation Styles ***************/
+header nav {
+	width: 75%;
+	margin: auto;
+	padding: 0 25px;
+}
+
+header nav ul {
+	display: flex;
+	list-style-type: none;
+	justify-content: space-between;
+}
+
+header nav ul li a {
+	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: bold;
+	display: block;
+	padding: 10px;
+	background: #9c9c9c;
+}
+
+.selected {
+	background: rgba(254, 0, 187, 1);
+	transition: all 1s;
+}
+
+/*************** Frist Section Styles ***************/
+#first article {
+	display: flex;
+	align-items: flex-start;
+}
+
+#first article img {
+	margin-left: 25px;
+}
+
+/*************** Second Section Styles ***************/
+#second div,
+#fifth div {
+	display: flex;
+	justify-content: space-between;
+}
+
+#second article {
+	width: 30%;
+}
+
+/*************** Third Section Styles ***************/
+#third article {
+	display: flex;
+	align-items: flex-start;
+}
+
+#third article img {
+	margin-right: 25px;
+}
+
+/*************** Fifth Section Styles ***************/
+#fifth article {
+	width: 47%;
+}
+
+#fifth {
+	margin-bottom: 500px;
+}
