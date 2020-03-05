@@ -3,15 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>Studio 4</title>
+    <link href="style.css" rel = "stylesheet">
   </head>
   <body>
 
     <h1>Have You Been Cyberbullied Before?</h1>
 
-    <button id = "yes" onclick="bullied(myChart)">Yes</button>
-    <button id = "no" onclick="notBullied(myChart)">No</button>
+    <button id = "yes">Yes</button>
+    <button id = "no">No</button>
 
-    <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+    <div class="chart-container" style="position: absolute; margin: auto; height:40px; width: 100vw; ">
         <canvas id="myChart"></canvas>
     </div>
 
