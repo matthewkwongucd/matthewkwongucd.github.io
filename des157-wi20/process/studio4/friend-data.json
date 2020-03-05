@@ -1,0 +1,43 @@
+{
+    "friends": [{
+      "fname": "Bill",
+      "lname": "Mead",
+      "email": "bill@meaddesign.net",
+      "facebook": "https://www.facebook.com/bill.mead",
+      "twitter": "https://twitter.com/wmmead",
+      "instagram": "https://www.instagram.com/wmmead/",
+      "linkedin": "https://www.linkedin.com/in/wmmead/"
+    }, {
+      "fname": "Steve",
+      "lname": "Mehallo",
+      "email": "steve@mehallo.com",
+      "facebook": "https://www.facebook.com/mehallo",
+      "twitter": "https://twitter.com/mehallo",
+      "instagram": "https://www.instagram.com/flommus/",
+      "linkedin": "https://www.linkedin.com/in/mehallo/"
+    }, {
+      "fname": "Laura",
+      "lname": "Hohlwein",
+      "email": "hohlwein@mindspring.com",
+      "facebook": "https://www.facebook.com/laura.hohlwein",
+      "twitter": "https://twitter.com",
+      "instagram": "https://www.instagram.com/honlwein/",
+      "linkedin": "https://www.linkedin.com/in/hohlwein/"
+    }, {
+      "fname": "Geoff",
+      "lname": "Sakala",
+      "email": "geoff@studiocoworking.com",
+      "facebook": "https://www.facebook.com/laura.hohlwein",
+      "twitter": "https://twitter.com/studiocowork916",
+      "instagram": "https://www.instagram.com/geoffsakala/",
+      "linkedin": "https://www.linkedin.com/in/geoffsakala/"
+    }, {
+      "fname": "Deborah",
+      "lname": "Mullen",
+      "email": "deb@gmail.com",
+      "facebook": "https://www.facebook.com/deborah.mancino",
+      "twitter": "https://twitter.com/debsmooth",
+      "instagram": "https://www.instagram.com/debsmooth/",
+      "linkedin": "https://www.linkedin.com/in/deborah-mullen/"
+    }]
+  }

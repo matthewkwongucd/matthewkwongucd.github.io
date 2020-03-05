@@ -1,0 +1,12 @@
+body{
+  font-family:arial;
+  text-align: center;
+}
+
+
+button{
+  font-size: 15px;
+  padding: 20px;
+  width: 150px;
+  border-radius: 10px;
+}
