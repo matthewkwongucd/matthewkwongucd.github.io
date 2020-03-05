@@ -27,40 +27,51 @@ window.addEventListener('load', function(){
   let counter = 0;
   let prevCounter = 0;
 
-  console.log(posts[0].getBoundingClientRect().top + window.pageYOffset);
-
   posts.forEach(function(post) {
     postTops.push(Math.floor(post.getBoundingClientRect().top) + window.pageYOffset);
   });
+  // console.log(postTops);
 
   // console.log(postTops);
   window.addEventListener('scroll', function(){
     pagetop = window.pageYOffset + 250;
-    console.log(pageTop);
+    // console.log(pageTop);
 
     if(pagetop > postTops[counter + 1]){
       counter++;
       console.log(`scrolling down ${counter}`);
     }
+
     else if (counter > 0 && pagetop < postTops[counter]) {
       counter--;
       lastPost = posts.length -1;
       console.log(`scrolling up ${counter}`);
     }
+
     else if(pagetop > postTops[lastPost]){
       conter = lastPost;
       lastPost++;
-      console.log(`lastPost: #{counter}`);
+      console.log(`lastPost: ${counter}`);
     }
 
     if(counter != prevCounter){
       navLinks.forEach(function(eachLink){
         eachLink.removeAttribute('class');
       });
+      var thisLink = document.querySelector(`nav ul li:nth-child(${counter + 1}) a`);
+      thisLink.className = 'selected';
+      prevCounter = counter;
     }
-    var thisLink = document.querySelector(`nav ul li:nth-child(${counter + 1}) a`);
-    thisLink.className = 'selected';
-    prevCounter = counter;
   });
-
 });
+
+let resizeId;
+window.addEventListener('resize', function(){
+  clearTimeout(resizeId);
+  resizeId = SetTimeout(function(){
+    window.onbeforeunload = function(){
+      window.scrollTo(0,0);
+    };
+    window.location.reload(true);
+  }, 500);
+})
