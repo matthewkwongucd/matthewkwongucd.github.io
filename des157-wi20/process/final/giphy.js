@@ -1,10 +1,10 @@
 
 const apiKey = "ZziyfZIZplQ1ryLkR4yGcSM93JTcnpZJ";
-const q = ["bullying", "cyberbully", "bully", "cyberbullying", "bullied", "cyberbullied"];
-
-
-
-const path = `https://api.giphy.com/v1/gifs/search?&api_key=${apiKey}&q=${q[Math.floor(Math.random()*q.length)]}`;
+const q = ["bullying"];
+console.log(q);
+// const path = `https://api.giphy.com/v1/gifs/search?&api_key=${apiKey}&q=${q[Math.floor(Math.random()*q.length)]}`;
+const path = `https://api.giphy.com/v1/gifs/search?&api_key=${apiKey}&q=${q}`;
+console.log(path);
 
 // makes connection to server
 // const promise = fetch(path); //Promise 1
@@ -25,17 +25,12 @@ const path = `https://api.giphy.com/v1/gifs/search?&api_key=${apiKey}&q=${q[Math
 fetch(path).then(function(response) {
 	return response.json()
 }).then(function(json){
-
 	// console.log(json.data); //array of gif results
-	// console.log(json.data); //array of gif results
-
 	// console.log(json.data[Math.floor(Math.random()*json.data.length)].images.fixed_width.url); //gets RANDOM image
 
 	const background = document.getElementById('background');
 	let resultsHTML = '';
 
-
-	// const obj = json.parse(json);
 	// json.data.forEach(function(obj){
 		// console.log(obj.images.fixed_width.url); //img url
 
