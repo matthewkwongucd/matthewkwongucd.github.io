@@ -63,6 +63,8 @@ section{
 
 .home > #background > img{
   opacity: 0.25;
+  width: 100vw;
+  height: 100vh;
 }
 
 #prevention-wrapper{
