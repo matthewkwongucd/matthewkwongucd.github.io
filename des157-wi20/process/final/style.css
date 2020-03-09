@@ -14,8 +14,9 @@
 }
 
 body{
-  background-color: #161616;
-  color: white;
+  margin-top: 0 !important;
+  background-color: white;
+  /* color: white; */
   overflow-x: hidden;
   /* font-family: 'Open Sans', sans-serif; */
   font-family: 'Netflix Sans';
@@ -34,6 +35,7 @@ section{
 }
 
 nav  {
+  /* background-color: rgb(0, 0, 0,.3); */
   /* z-index: -1; */
   /* background-color: #161616; */
   /* opacity: 0.25; */
@@ -56,6 +58,7 @@ nav ul li {
 }
 
 nav ul li a{
+  z-index: 3;
   color: white;
   text-decoration: none;
 }
@@ -103,14 +106,20 @@ a{
   color: #161616;
 }
 
+.home {
+  color: white;
+  height: 100vh;
+  margin:0 !important;
+}
+
 
 .home > #background{
+  background-color: #161616;
   position: absolute;
   left: 0;
   top:0;
+  bottom: 0;
   z-index: -1;
-  /* border: solid 2px red; */
-  height: 100vh;
 }
 
 .home > #background > img{
@@ -123,6 +132,10 @@ a{
 /* Statistics */
 .statistics{
   height: 150vh;
+  background-color: white;
+  color:black;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .statistics-wrapper{
@@ -168,12 +181,14 @@ a{
 }
 
 .statistics > #statistics-text{
-    padding-bottom: 100px;
+  padding-bottom: 100px;
 }
 
 /* Prevention */
-.prevention > #background{
-
+.prevention{
+  padding-top: 20px;
+  background-color: #161616;
+  color:white;
 }
 
 .prevention > #prevention-wrapper{
@@ -186,6 +201,7 @@ a{
   width: 30%;
   line-height: 25px;
 }
+
 
 
 
@@ -222,6 +238,14 @@ a{
   }
 
   .prevention > #prevention-wrapper div{
+    width: 100%;
+  }
+
+  .statistics-wrapper{
+    flex-direction: column;
+  }
+
+  .statistics-wrapper > div{
     width: 100%;
   }
 }

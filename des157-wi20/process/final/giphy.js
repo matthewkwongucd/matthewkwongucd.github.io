@@ -35,11 +35,11 @@ fetch(path).then(function(response) {
 		// console.log(obj.images.fixed_width.url); //img url
 
 		const url = json.data[Math.floor(Math.random()*json.data.length)].images.fixed_width.url; //img url
-		// list.push(url);
 
 		resultsHTML += `<img src = "${url}"
-		 								width = "100%"
 										alt = "${json.data.title}">` //append to background
+
+		// document.querySelector(".home").style.backgroundImage = `url(${url})`; //alternative work in progress
 
 
 	background.innerHTML = resultsHTML;

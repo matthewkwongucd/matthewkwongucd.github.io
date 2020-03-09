@@ -26,7 +26,8 @@
 //     }
 // });
 
-Chart.defaults.global.defaultFontColor = "#fff";
+Chart.defaults.global.defaultFontColor = "black";
+// Chart.defaults.global.defaultFontColor = "#fff";
 // Chart.defaults.global.fontSize = "20";
 
 new Chart(document.getElementById("stats-chart"), {
@@ -58,8 +59,7 @@ new Chart(document.getElementById("stats-chart"), {
               'rgba(54, 162, 235, 1)'
           ],
           borderWidth: 1,
-          data: [59, 42, 32, 25, 21, 16, 7],
-          pointHoverBackgroundColor: 'red'
+          data: [59, 42, 32, 25, 21, 16, 7]
         }
       ]
     },
