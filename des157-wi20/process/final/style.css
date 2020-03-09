@@ -89,9 +89,9 @@ a{
   font-weight: bold;
 }
 
-.home > #learn-more:hover{
+#learn-more:hover{
   background-color: white;
-  color: #161616;
+    color: #161616;
 }
 
 
