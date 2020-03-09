@@ -7,17 +7,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <meta charset="utf-8">
   </head>
 
   <body>
 
     <nav id = "nav">
       <ul>
-        <li><a href = "#background">home</a</li>
+        <li><a href = "#background">home</a></li>
         <li><a href = "#statistics">statistics</a></li>
         <li><a href = "#prevention">prevention</a></li>
         <li><a href = "#chart">chart</a></li>
+      </ul>
     </nav>
 
 
@@ -31,11 +31,11 @@
       <h1 id = "title">Cyberbullying</h1>
       <h2 id = "subtitle">A problem bigger than ever</h2>
 
+      <a href = "#statistics">
         <div id = "learn-more">
-          <a href = "#statistics">
             <p>learn more</p>
-          </a>
         </div>
+      </a>
 
 
       <!-- <img src = "giphy"> -->
@@ -46,9 +46,32 @@
 
     <section class = "statistics" id = "statistics">
       <h2>Today in the United States:</h2>
-      <p>“Roughly six-in-ten U.S. teens have been bullied or harassed online”</p>
 
-      <img src = "#" alt = "chart data">
+
+      <div class = "statistics-wrapper">
+        <div>
+        <p class = "quote">“Roughly six-in-ten U.S. teens have been bullied or harassed online”
+        </p>
+        <span class = "source">
+        <a href = "https://www.pewresearch.org/fact-tank/2018/09/27/qa-how-and-why-we-studied-teens-and-cyberbullying/">
+          (Pew Research Center)</a>
+        </span>
+        </div>
+
+        <div id = "statistics-text">
+          <p>Today in America, cyberbullying has never been worse. With technology
+            becoming more prevalent than ever, bullying has reached social media platforms
+            on the internet.</p>
+        </div>
+
+      </div>
+
+
+
+
+      <div class="chart-container" style="margin: auto; height:40px; width: 100%; ">
+          <canvas id="stats-chart"></canvas>
+      </div>
     </section>
 
 
@@ -102,7 +125,7 @@
 
     <!-- Cyberbullying Needs to End -->
     <section class = "chart" id = "chart">
-      <h2>Cyberbullying<h2>
+      <h2>Cyberbullying</h2>
       <h3>Needs to End</h3>
 
       <h4>Have You Been Cyberbullied Before?</h4>
@@ -132,7 +155,8 @@
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
 
     <!--My own-->
-    <script src = "script.js"></script>
     <script src = "giphy.js"></script>
+    <script src = "prevent.js"></script>
+    <script src = "script.js"></script>
   </body>
 </html>
