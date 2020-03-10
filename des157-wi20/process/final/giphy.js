@@ -1,6 +1,6 @@
 
 const apiKey = "ZziyfZIZplQ1ryLkR4yGcSM93JTcnpZJ";
-const q = ["bullying", "bully", "cyberbully"];
+const q = ["bully", "cyberbully", "depression", "sad", "angry"];
 console.log(q);
 // const path = `https://api.giphy.com/v1/gifs/search?&api_key=${apiKey}&q=${q[Math.floor(Math.random()*q.length)]}`;
 const path = `https://api.giphy.com/v1/gifs/search?&api_key=${apiKey}&q=${q}`;
