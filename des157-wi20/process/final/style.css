@@ -76,12 +76,14 @@ a{
   color: white;
 }
 
-.home > #title{
+.title{
   font-family: times-new-roman;
-  font-size: 150px;
   font-style: italic;
   font-weight: bold;
-  /* padding-top: 25%; */
+}
+
+.home > .title{
+  font-size: 150px;
   padding-top: 100px;
   line-height: 100px;
 }
@@ -179,23 +181,33 @@ a{
 
 .quote{
   width: 80%;
-  font-size: 45px;
+  font-size: 50px;
   line-height: normal;
   /* text-align: right; */
   margin: 0;
+  text-indent: 1em;
 }
 
-.statistics > #statistics-text{
-  padding-bottom: 100px;
+#statistics-text{
+  padding-bottom: 50px;
 }
+
+
+#statistics a{
+  color:black;
+  font-weight: bold;
+}
+
+
 
 /* Prevention */
 .prevention{
   padding-top: 20px;
   background-color: #161616;
   color:white;
-  height: 50vh;
+  height: 65vh;
 }
+
 
 .prevention > #prevention-wrapper{
   display: flex;
@@ -210,14 +222,52 @@ a{
 
 
 
+/* Survey */
 
-#yes  #no{
-  width: 200px;
-  height: 50px;
-  /* color:white; */
-  border: 2px solid white;
+.survey > {
+  font-family: times-new-roman;
+  font-style: italic;
+  font-weight: bold;
 }
 
+
+.button-wrapper{
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+}
+
+
+#yes{
+  width: 200px;
+  border: solid 2px #191919;
+  margin: 0;
+  text-align: center;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+
+#yes:hover{
+  background-color: #161616;
+  color: white;
+}
+
+
+#no{
+  width: 200px;
+  border: solid 2px #191919;
+  margin: 0;
+  text-align: center;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+
+#no:hover{
+  background-color: #161616;
+  color: white;
+}
 
 @media only screen and (max-width: 800px) {
   /* body{
@@ -235,6 +285,15 @@ a{
     font-size: 3.5em;
   }
 
+/* Prevention */
+  .prevention{
+    height: auto;
+    padding-bottom: 40px;
+    /* height: 100vh; */
+  }
+
+
+
   .prevention > #prevention-wrapper{
     display: flex;
     flex-direction: column;
@@ -244,6 +303,9 @@ a{
   .prevention > #prevention-wrapper div{
     width: 100%;
   }
+
+
+  /* statistics */
 
   .statistics-wrapper{
     flex-direction: column;

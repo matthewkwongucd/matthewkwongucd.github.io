@@ -28,7 +28,7 @@
       <!-- Gif background -->
       <div id = "background"></div>
 
-      <h1 id = "title">Cyberbullying</h1>
+      <h1 class = "title">Cyberbullying</h1>
       <h2 id = "subtitle">A problem bigger than ever</h2>
 
       <a href = "#statistics">
@@ -60,12 +60,15 @@
           <p>Today in America, cyberbullying has never been worse. With technology
             becoming more prevalent than ever, bullying has reached social media platforms
             on the internet. The internet needs to be a safer, friendlier place for teenagers.</p>
+            <p>In a survey conducted by the
+              <a href = "https://www.pewresearch.org/internet/2018/09/27/a-majority-of-teens-have-experienced-some-form-of-cyberbullying/pi_2018-09-27_teens-and-cyberbullying_0-01/">
+              Pew Research Center</a> in 2018, they found that
+              an alarming number of teens have been the target of cyberbullying. Below
+            are the survey results, illustrating the number of students</p>
         </div>
       </div>
 
-      <p>In a survey conducted by the Pew Research Center in 2018, they found that
-        an alarming number of teens have been the target of cyberbullying. Below
-      are the survey results, illustrating the number of students</p>
+
 
       <div class="chart-container" style="margin: auto; height:40px; width: 100%; ">
           <canvas id="stats-chart"></canvas>
@@ -98,7 +101,7 @@
           <p>Talk and speak up! Let others know what's going and ask for help.
             Ask questions to learn what's happening.</p>
 
-          <p>"How it started?", "When did it start?" and "Who is involved?"
+          <p><i>"How it started?"</i>, <i>"When did it start?"</i> and <i>"Who is involved?"</i>
             are great questions to ask. </p>
         </div>
 
@@ -113,7 +116,7 @@
       </div>
 
       <div>
-        <h4>Sources:</h4>
+        <h4>Read more at:</h4>
         <a class = "source" href = "https://www.stopbullying.gov/cyberbullying/prevention">
           https://www.stopbullying.gov/cyberbullying/prevention
         </a>
@@ -123,14 +126,27 @@
 
     <!-- Cyberbullying Needs to End -->
     <section class = "survey" id = "chart">
-      <h2>Cyberbullying</h2>
-      <h3>Needs to End</h3>
+      <!-- <h2>Cyberbullying</h2> -->
+      <!-- <h3>Needs to End</h3> -->
 
-      <h4>Have You Been Cyberbullied Before?</h4>
+      <!-- <h4>Have You Been Cyberbullied Before?</h4> -->
 
-      <button id = "yes">Yes</button>
-      <button id = "no">No</button>
+      <h2 class = "title">Have You Been Cyberbullied Before?</h2>
 
+      <!-- <button id = "yes">Yes</button>
+      <button id = "no">No</button> -->
+
+      <!-- Yes -->
+      <div class = "button-wrapper">
+        <div  id = "yes">
+            <p>Yes</p>
+        </div>
+
+        <!--No  -->
+        <div class = "hover-button" id = "no">
+            <p>No</p>
+        </div>
+      </div>
 
       <!-- <form id = "bullied-form">
         <input  value = "yes" id = "yes" name = "yes" type = "submit">

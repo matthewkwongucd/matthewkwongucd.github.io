@@ -33,9 +33,9 @@ Chart.defaults.global.defaultFontColor = "black";
 new Chart(document.getElementById("stats-chart"), {
     type: 'horizontalBar',
     data: {
-      labels: ["Any type of cyberbullying below", "Offensive name-calling",
+      labels: ["Total", "Offensive name-calling",
     "Spreading of false rumors", "Receiving explicit images they didn't ask for",
-    "Asking of location, activity, who they're with, by someone other than parent",
+    "Asking of location, activity, who they're with, by non-guardian",
     "Physical Threats", "Having explicit images of them shared without conset"],
       datasets: [
         {
@@ -86,7 +86,7 @@ new Chart(document.getElementById("stats-chart"), {
         yAxes: [{
          ticks: {
            beginAtZero: true,
-           fontSize: 15
+           fontSize: 17
          },
          // gridLines: {
          //   color: 'rgba(171,171,171,1)',
