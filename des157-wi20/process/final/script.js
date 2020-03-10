@@ -14,10 +14,8 @@ var firebaseConfig = {
 //Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-
-let no = 0;
-let yes = 0;
-
+let no;
+let yes;
 
 //firebase
 const db = firebase.database().ref("bullied");
@@ -26,71 +24,71 @@ const db = firebase.database().ref("bullied");
 // gets data of yes and no:
 function getData(){
   db.on('child_added', function(snapshot){
-    snapshot.forEach(function(childSnapshot){
-      var key = childSnapshot.key;
-      var value = childSnapshot.val();
+    var values = snapshot.val();
+    var theKey = snapshot.key;
 
-      // for(let i = 0; i < snapshot.length; i++){
-      //   console.log(`${key}: ${value}`);
-      // }
+      yes = values.yes;
+      no = values.no;
 
-      console.log(`${key}: ${value}`);
+      console.log(`${theKey}: ${values.no}`);
 
-      // only returning one becuase of the for loop and the return statement kicks it out before it can reach No.
-      return value;
+// Chart JS
+      const ctx = document.getElementById('myChart').getContext('2d');
+
+      let myChart = new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+              labels: ['Yes', 'No'],
+              datasets: [{
+                  label: 'Number of people bullied',
+                  data: [values.yes, values.no],
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                  ],
+                  borderColor: [
+                      'rgba(255, 99, 132, 1)',
+                      'rgba(54, 162, 235, 1)',
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: [{
+          }]
+      });
     });
-  });
 }
-
 
 getData();
 
 
+
 // On click yes or no buttons in html
+
+// Clicking Yes
 document.getElementById('yes').onclick = function(){
 
-  getData();
-
   yes++;
-
-  // UPDATES TO FIREBASE
-  // function updateRecord(yes){
-  //   console.log(yes);
-  //
-  //   // var bullied = {
-  //   //   "yes": 0
-  //   // };
-  //
-  //   const userRef = firebase.database().ref('bullied/0/yes');
-  //
-  //   var updates = {};
-  //   updates['bullied/0/yes'];
-  //
-  //
-  //   return firebase.database().ref().update(updates);
-  // }
-
 
   // UPDATES TO FIREBASE
   function updateRecord(value){
     const userRef = firebase.database().ref('bullied');
 
     var updates = {};
-    // console.log(value.yes);
-
 
     updates['/0/yes'] = value;
     console.log(value);
 
     userRef.update(updates);
     return yes;
-    // return firebase.database().ref().update(updates);
   };
 
 
   //updating chart
   updateRecord(yes);
 
+  // Gets data
+  getData();
 
   // chart js
   addData(myChart, [yes,no], 0);
@@ -100,8 +98,7 @@ document.getElementById('yes').onclick = function(){
 
 
 
-
-
+//Clicking No
 document.getElementById('no').onclick = function(){
   no++;
 
@@ -111,12 +108,9 @@ document.getElementById('no').onclick = function(){
     const userRef = firebase.database().ref('bullied');
 
     var updates = {};
-    // console.log(value.yes);
-
 
     updates['/0/no'] = value;
 
-    // return firebase.database().ref().update(updates);
     userRef.update(updates);
     return no;
   }
@@ -134,79 +128,11 @@ document.getElementById('no').onclick = function(){
   myChart.update();
 }
 
-
-
-
-
-
-
-
-
-// Chart JS
-const ctx = document.getElementById('myChart').getContext('2d');
-
-let myChart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-        labels: ['Yes', 'No'],
-        datasets: [{
-            label: 'Number of people bullied',
-            data: [yes, no],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: [{
-    }]
-});
-
 //updates the chart - Chart JS
 function addData(myChart, data, datasetIndex) {
    myChart.data.datasets[datasetIndex].data = data;
    myChart.update();
 }
 
-
-
-
-// UPDATES TO FIREBASE
-// function updateRecord(value){
-//   const userRef = firebase.database().ref('bullied/0');
-//
-//   var updates = {};
-//   // console.log(value.yes);
-//
-//
-//   updates['yes'] = value;
-//   updates['no'] = value;
-//
-//   return firebase.database().ref().update(updates);
-// }
-
-// updateRecord(yes);
-
-
-
-
-
-
-
-
-// // firebase sad life
-// function displayBullied(){
-//   const dbRef = firebase.database().ref('bullied');
-//
-//   dbRef.on("child_added", function(snap){
-//     const bulliedValue = snap.val();
-//     const ids = snap.key;
-//   });
-// }
 //
 // displayBullied();
