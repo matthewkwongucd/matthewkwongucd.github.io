@@ -29,13 +29,11 @@ body{
 }
 
 section{
-  height: 100vh;
+  /* height: 100vh; */
   /* border: solid 2px blue; */
 
   padding-left: 10%;
   padding-right: 10%;
-  /* margin-left: 10%;
-  margin-right: 10%; */
 }
 
 nav  {
@@ -80,6 +78,10 @@ a{
   font-family: times-new-roman;
   font-style: italic;
   font-weight: bold;
+}
+
+.home{
+  height: 100vh;
 }
 
 .home > .title{
@@ -137,7 +139,7 @@ a{
 
 /* Statistics */
 .statistics{
-  height: 150vh;
+  height: 110vh;
   background-color: white;
   color:black;
   padding-top: 20px;
@@ -149,12 +151,12 @@ a{
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  /* padding-bottom: 100px; */
 }
 
 .statistics-wrapper > div{
   /* border: solid 2px red; */
   width: 50%;
+  margin: 20px;
 }
 
 #statistics-text {
@@ -180,12 +182,12 @@ a{
 }
 
 .quote{
-  width: 80%;
+  /* width: 80%; */
   font-size: 50px;
   line-height: normal;
   /* text-align: right; */
   margin: 0;
-  text-indent: 1em;
+  /* text-indent: 1em; */
 }
 
 #statistics-text{
@@ -205,7 +207,7 @@ a{
   padding-top: 20px;
   background-color: #161616;
   color:white;
-  height: 65vh;
+  height: 70vh;
 }
 
 
@@ -233,7 +235,7 @@ a{
 
 .button-wrapper{
   display: flex;
-  width: 40%;
+  width: 500px;
   justify-content: space-between;
 }
 
@@ -269,6 +271,9 @@ a{
   color: white;
 }
 
+
+.chart
+
 @media only screen and (max-width: 800px) {
   /* body{
     flex-direction: column;
@@ -285,14 +290,24 @@ a{
     font-size: 3.5em;
   }
 
+
+  #quote-wrapper{
+    padding-bottom: 60px;
+
+  }
+
+  .quote{
+    width: 100%;
+    font-size: 35px;
+  }
+
+
 /* Prevention */
   .prevention{
     height: auto;
     padding-bottom: 40px;
     /* height: 100vh; */
   }
-
-
 
   .prevention > #prevention-wrapper{
     display: flex;

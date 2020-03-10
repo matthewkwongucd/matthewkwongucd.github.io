@@ -11,7 +11,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-  
+
   
 const newBtn = document.getElementById("newbtn");
 const editBtns = document.querySelectorAll(".fa-edit");
@@ -43,7 +43,7 @@ addFriendForm.addEventListener("submit", function(event){
         newFriend[key] = value;
     }
     console.log(newFriend);
-    
+
     if(newFriend.fname != "" && newFriend.lname != "" && newFriend.email !=""){
         db.push(newFriend, function(){
             resetFormFields();
@@ -53,7 +53,7 @@ addFriendForm.addEventListener("submit", function(event){
                 window.location.reload(true);
             }, 1000);
         });
-    }   
+    }
     else{
         addFriendForm.className = "add-friend-offscreen";
     }
@@ -63,7 +63,7 @@ document.addEventListener('click', function(event){
     if(event.target.matches('.fa-edit')) {
         editFriendForm.className = "edit-friend-onscreen";
 
-        //get the id for the record clicked 
+        //get the id for the record clicked
         // Fill the edit form with the correct data to edit.
         thisRecord = event.target.getAttribute('id').slice("2");
         setForm(thisRecord);
@@ -137,18 +137,18 @@ function displayFriends(){
         <div class="name">
             ${friends.fname} ${friends.lname}
         </div>
-        
+
         <div class="email">
             <i class="fas fa-envelope-square"></i>  ${friends.email}
         </div>
-        
+
         <div class="social">
             <a href="${friends.facebook}"><i class="fab fa-facebook-square"></i></a>
             <a href="${friends.twitter}"><i class="fab fa-twitter-square"></i></a>
             <a href="${friends.instagram}"><i class="fab fa-instagram"></i></a>
             <a href="${friends.linkedin}"><i class="fab fa-linkedin"></i></a>
         </div>
-        
+
         <i class="fas fa-edit" id = "e-${ids}"></i>
         <i class="fas fa-times-circle" id = "d-${ids}"></i>
         `;
@@ -168,5 +168,3 @@ function resetFormFields(){
     document.getElementById("insta").value = "https://instagram.com";
     document.getElementById("linkedin").value = "https://linkedin.com";
 };
-
-
