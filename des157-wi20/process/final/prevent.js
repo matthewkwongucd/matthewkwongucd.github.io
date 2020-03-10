@@ -64,6 +64,11 @@ new Chart(document.getElementById("stats-chart"), {
       ]
     },
     options: {
+      // animation: {
+      //   onProgress: function(animation) {
+      //     progress.value = animation.animationObject.currentStep / animation.animationObject.numSteps;
+      //     }
+      // },
       legend: {
          display: false
        },
