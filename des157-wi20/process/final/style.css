@@ -2,7 +2,7 @@
   font-family: 'Netflix Sans';
   font-weight: 100;
   font-display: optional;
-  src: url('https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Th.woff2') format('woff2'), url('https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Th.woff') format('woff');
+  src: url('NetflixSans_W_Th.woff') format('woff2');
 }
 
 @font-face {
@@ -10,7 +10,11 @@
   /* stylelint-disable-line declaration-property-value-blacklist */
   font-weight: bold;
   font-display: optional;
-  src: url('https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Md.woff2') format('woff2'), url('https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Md.woff') format('woff');
+  src: url('NetflixSans_W_Md.woff2') format('woff2');
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 body{
@@ -135,7 +139,7 @@ a{
   background-color: white;
   color:black;
   padding-top: 20px;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
 }
 
 .statistics-wrapper{
@@ -143,7 +147,7 @@ a{
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  padding-bottom: 100px;
+  /* padding-bottom: 100px; */
 }
 
 .statistics-wrapper > div{
@@ -152,11 +156,12 @@ a{
 }
 
 #statistics-text {
+  font-size: 20px;
   line-height: 30px;
 }
 
 .statistics > p{
-  font-size: 20px;
+  /* margin-top:0; */
   line-height: 30px;
 }
 
@@ -189,6 +194,7 @@ a{
   padding-top: 20px;
   background-color: #161616;
   color:white;
+  height: 50vh;
 }
 
 .prevention > #prevention-wrapper{
@@ -201,8 +207,6 @@ a{
   width: 30%;
   line-height: 25px;
 }
-
-
 
 
 
