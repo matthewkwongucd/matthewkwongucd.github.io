@@ -48,12 +48,11 @@
 
       <div class = "statistics-wrapper">
         <div id = "quote-wrapper">
-        <p class = "quote">“Roughly six-in-ten U.S. teens have been bullied or harassed online”
-        </p>
-        <span class = "source">
-        <a href = "https://www.pewresearch.org/fact-tank/2018/09/27/qa-how-and-why-we-studied-teens-and-cyberbullying/">
-          (Pew Research Center)</a>
-        </span>
+          <p class = "quote">“Roughly six-in-ten U.S. teens have been bullied or harassed online”</p>
+          <span class = "source">
+            <a href = "https://www.pewresearch.org/fact-tank/2018/09/27/qa-how-and-why-we-studied-teens-and-cyberbullying/">
+            (Pew Research Center)</a>
+          </span>
         </div>
 
         <div id = "statistics-text">
@@ -125,39 +124,88 @@
 
 
     <!-- Cyberbullying Needs to End -->
-
     <section class = "survey" id = "chart">
-      <!-- <h2>Cyberbullying</h2> -->
-      <!-- <h3>Needs to End</h3> -->
 
-      <!-- <h4>Have You Been Cyberbullied Before?</h4> -->
+      <h1 class = "title">Cyberbullying</h1>
 
-      <h2 class = "title">Have You Been Cyberbullied Before?</h2>
+      <div id = "survey-content">
+        <h3>Have You Been Cyberbullied Before?</h3>
+          <!-- Yes -->
+          <div id = "button-wrapper">
+            <div  id = "yes">
+                <p>Yes</p>
+            </div>
 
-      <!-- <button id = "yes">Yes</button>
-      <button id = "no">No</button> -->
-
-      <!-- Yes -->
-      <div class = "button-wrapper">
-        <div  id = "yes">
-            <p>Yes</p>
-        </div>
-
-        <!--No  -->
-        <div class = "hover-button" id = "no">
-            <p>No</p>
-        </div>
+            <!--No  -->
+            <div id = "no">
+                <p>No</p>
+            </div>
+          </div>
       </div>
 
-      <!-- <form id = "bullied-form">
-        <input  value = "yes" id = "yes" name = "yes" type = "submit">
-        <input  value = "no" id = "no" name = "yes" type = "submit">
-      </form> -->
+      <div id = "results-and-chart-wrapper">
+        <div id = "chart-results"></div>
 
-      <div class="chart-container" style="margin: auto; height:40px; width: 100%; ">
-          <canvas id="myChart"></canvas>
+        <div id = "survey-chart">
+            <canvas id="myChart"></canvas>
+        </div>
       </div>
     </section>
+
+    <!--Resources -->
+    <section class = "resources">
+      <h2>Resources</h2>
+
+    <div id = "resources-wrapper">
+
+
+        <!-- Suicide Hotline -->
+      <div>
+        <h3>Suicide Hotline</h3>
+        <img src = "images/suicide-prevention.png" alt = "stop bullying">
+        <p class = "resources-text">If you are in urgent danger, please call 1-800-273-8255 for help.
+          You and your life matter. Please call for help.</p>
+
+        <a href = "https://suicidepreventionlifeline.org/">
+          <div class = "button">
+            <p>Learn More</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Bullying Prevention -->
+      <div>
+        <h3>Bullying Prevention</h3>
+        <img src = "images/stop-bullying.png" alt = "stop bullying">
+        <p class = "resources-text">Learn how to prevent bullying and how to understand it. Resources for both
+        childrens and adults on how to address cyberbullying</p>
+
+        <a href = "https://www.stopbullying.gov/prevention/how-to-prevent-bullying">
+          <div class = "button">
+            <p>Learn More</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Parents Guide -->
+      <div>
+        <h3>Parents Guide</h3>
+        <img src = "images/parents-guide.png" alt = "parents guide to cyberbullying">
+
+      <p class = "resources-text">Resources for parents to address questions they have about cyberbullying
+           and advice on how parents can help their children.
+        </p>
+
+        <a href = "http://www.connectsafely.org/wp-content/uploads/cyberbullying_guide.pdf">
+          <div class = "button">
+            <p>Learn More</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+
+  </section>
 
 
     <!-- Chart JS -->
