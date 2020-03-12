@@ -29,9 +29,6 @@ body{
 }
 
 section{
-  /* height: 100vh; */
-  /* border: solid 2px blue; */
-
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -69,6 +66,15 @@ h2{
   font-size: 30px;
 }
 
+h3{
+  font-size: 25px;
+}
+
+p{
+  font-size: 20px;
+  line-height: 25px;
+}
+
 a{
   text-decoration: none;
   color: white;
@@ -99,7 +105,7 @@ a{
 
 
 #learn-more{
-  margin-top:7%;
+  margin-top:50px;
   font-size: 17px;
   border: solid 2px white;
   width: 200px;
@@ -139,7 +145,7 @@ a{
 
 /* Statistics */
 .statistics{
-  height: 110vh;
+  height: 150vh;
   background-color: white;
   color:black;
   padding-top: 20px;
@@ -156,11 +162,11 @@ a{
 .statistics-wrapper > div{
   /* border: solid 2px red; */
   width: 50%;
-  margin: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 #statistics-text {
-  font-size: 20px;
   line-height: 30px;
 }
 
@@ -176,30 +182,24 @@ a{
 
 .source{
   text-decoration: underline;
-  /* float: right; */
-  /* margin-right: 100px; */
   font-size:15px;
 }
 
 .quote{
-  /* width: 80%; */
   font-size: 50px;
   line-height: normal;
-  /* text-align: right; */
   margin: 0;
-  /* text-indent: 1em; */
 }
+
 
 #statistics-text{
   padding-bottom: 50px;
 }
 
-
 #statistics a{
   color:black;
   font-weight: bold;
 }
-
 
 
 /* Prevention */
@@ -222,26 +222,39 @@ a{
   line-height: 25px;
 }
 
-
-
 /* Survey */
-
-.survey > {
-  font-family: times-new-roman;
-  font-style: italic;
-  font-weight: bold;
+.survey{
+  height: 70vh;
+  margin-top: 100px;
+  /* padding-top: 300px; */
 }
 
 
-.button-wrapper{
+.survey > div{
+  padding-top: 50px;
+  /* height: 60vh; */
+}
+
+.survey > .title{
+  font-style: italic;
+  font-family: times-new-roman;
+  font-size: 100px;
+}
+
+#button-wrapper{
+  padding-top: 50px;
   display: flex;
-  width: 500px;
+  width: 350px;
   justify-content: space-between;
 }
 
+#button-wrapper p{
+  font-size: 16px;
+}
 
 #yes{
-  width: 200px;
+  width: 150px;
+  height: 50px;
   border: solid 2px #191919;
   margin: 0;
   text-align: center;
@@ -249,15 +262,14 @@ a{
   font-weight: bold;
 }
 
-
 #yes:hover{
   background-color: #161616;
   color: white;
 }
 
-
 #no{
-  width: 200px;
+  width: 150px;
+  height: 50px;
   border: solid 2px #191919;
   margin: 0;
   text-align: center;
@@ -272,28 +284,97 @@ a{
 }
 
 
-.chart
+#survey-chart{
+  display: none;
+  position: relative;
+  margin: auto;
+  margin-right: 0px;
+  margin-top: -250px;
+  width: 500px;
+  height: 500px !important;
+  /* border: solid 2px red; */
+  /* padding-bottom: 50px; */
+}
+
+#results-and-chart-wrapper{
+  display: flex;
+}
+
+#chart-results{
+  display: none;
+  width: 60%;
+  /* height: 1200px; */
+  /* border: solid 2px red; */
+  font-size: 30px;
+}
+
+
+.resources{
+  height: 100vh;
+  background-color: #161616;
+  color:white;
+  padding-top:20px;
+}
+
+.resources > #resources-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.resources > #resources-wrapper > div{
+  width: 30%;
+  padding-top: 20px;
+}
+
+.resources > #resources-wrapper > div > .resources-text {
+  width: 100%;
+  padding-top: 20px;
+  height: 100px;
+}
+
+.resources > #resources-wrapper img{
+  width: 100%;
+  height: auto;
+}
+
+
+.button{
+  margin:0 auto;
+  height: 50px;
+  width: 200px !important;
+  border: solid 2px white;
+  margin: 0;
+  /* background-color: red; */
+  text-align: center;
+  transition: 0.3s;
+  font-weight: bold;
+  /* padding: 5px; */
+}
+
+.button p{
+  font-size: 16px;
+}
+
+.button:hover{
+  background-color: white;
+  color: #161616;
+}
+
+
 
 @media only screen and (max-width: 800px) {
-  /* body{
-    flex-direction: column;
-  } */
+  .home  > .title{
+    font-size: 4em;
+  }
 
-  /* section{
-    height: 50vh;
-  } */
   .home > #subtitle{
     font-size: 20px;
   }
 
-  .home  > #title{
-    font-size: 3.5em;
-  }
-
-
   #quote-wrapper{
     padding-bottom: 60px;
-
   }
 
   .quote{
@@ -322,11 +403,64 @@ a{
 
   /* statistics */
 
+
   .statistics-wrapper{
     flex-direction: column;
   }
 
   .statistics-wrapper > div{
+    width: 100%;
+  }
+
+  /* Survey */
+  .survey > .title{
+    font-size: 50px;
+  }
+
+  .survey > div{
+    padding-top: 0px;
+  }
+
+  #survey-chart{
+    top: 100px;
+  }
+
+  #button-wrapper{
+    width: 60%;
+  }
+
+  #yes, #no{
+    width: 100px;
+  }
+
+  #results-and-chart-wrapper{
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  #chart-results{
+    margin-top:150px;
+    width: 100%;
+  }
+
+  #survey-chart{
+    margin-top: -100px;
+    width: 100%;
+    height: 100px;
+  }
+
+  /* Resources */
+  .resources{
+    height: auto;
+  }
+
+  .resources > #resources-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .resources > #resources-wrapper div{
     width: 100%;
   }
 }

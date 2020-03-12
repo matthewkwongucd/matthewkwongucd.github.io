@@ -30,12 +30,17 @@ function getData(){
       yes = values.yes;
       no = values.no;
 
-      console.log(`${theKey}: ${values.no}`);
+      console.log(`${theKey.no}: ${values.no}`);
+      console.log(`${theKey.yes}: ${values.yes}`);
 
-// Chart JS
+
+
+      // Chart JS
       const ctx = document.getElementById('myChart').getContext('2d');
 
       let myChart = new Chart(ctx, {
+          // maintainAspectRatio: true,
+
           type: 'doughnut',
           data: {
               labels: ['Yes', 'No'],
@@ -53,8 +58,10 @@ function getData(){
                   borderWidth: 1
               }]
           },
-          options: [{
-          }]
+          options: {
+              responsive: true,
+              maintainAspectRatio: false,
+          }
       });
     });
 }
@@ -62,6 +69,18 @@ function getData(){
 getData();
 
 
+function percentage(){
+  let total = yes + no;
+  let percentageBullied = ((yes/total) * 100).toFixed(2);
+
+  console.log(total);
+  console.log(percentageBullied);
+
+  document.getElementById("chart-results").innerHTML =
+  `Based on the answers of the <b>${total}</b> people who have answered, <b>${percentageBullied}</b>% have been cyberbullied`;
+
+  document.getElementById("chart-results").style.display = "block";
+}
 
 // On click yes or no buttons in html
 
@@ -69,6 +88,9 @@ getData();
 document.getElementById('yes').onclick = function(){
 
   yes++;
+
+  // Finds statistics about number of people bullied.
+  percentage();
 
   // UPDATES TO FIREBASE
   function updateRecord(value){
@@ -90,6 +112,11 @@ document.getElementById('yes').onclick = function(){
   // Gets data
   getData();
 
+  document.getElementById("survey-chart").style.display = "block";
+  document.getElementById("survey-content").style.display = "none";
+
+
+
   // chart js
   addData(myChart, [yes,no], 0);
   console.log(`number of users bullied: ${yes}`);
@@ -100,8 +127,12 @@ document.getElementById('yes').onclick = function(){
 
 //Clicking No
 document.getElementById('no').onclick = function(){
+  document.getElementById("survey-chart").style.display = "block";
+  document.getElementById("survey-content").style.display = "none";
   no++;
 
+
+  percentage();
 
   // UPDATES TO FIREBASE
   function updateRecord(value){
@@ -120,11 +151,12 @@ document.getElementById('no').onclick = function(){
   console.log(no);
 
   getData();
-  console.log(no);
+  // console.log(no);
 
   // chart js
   addData(myChart, [yes,no], 0);
   console.log(`number of users NOT bullied: ${no}`);
+
   myChart.update();
 }
 
@@ -133,6 +165,3 @@ function addData(myChart, data, datasetIndex) {
    myChart.data.datasets[datasetIndex].data = data;
    myChart.update();
 }
-
-//
-// displayBullied();
