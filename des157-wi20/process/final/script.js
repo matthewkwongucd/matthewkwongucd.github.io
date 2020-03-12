@@ -50,12 +50,17 @@ function getData(){
                   backgroundColor: [
                       'rgba(255, 99, 132, 0.2)',
                       'rgba(54, 162, 235, 0.2)',
+                      // "#000000",
+                      // "#ffffff"
+
                   ],
                   borderColor: [
                       'rgba(255, 99, 132, 1)',
                       'rgba(54, 162, 235, 1)',
+                    //   "#000000",
+                    // "#000000"
                   ],
-                  borderWidth: 1
+                  borderWidth: 3
               }]
           },
           options: {

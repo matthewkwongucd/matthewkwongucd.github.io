@@ -1,9 +1,9 @@
 
 const apiKey = "ZziyfZIZplQ1ryLkR4yGcSM93JTcnpZJ";
-const q = ["bully", "cyberbully", "depression", "sad", "angry"];
+const q = ["bully", "cyberbully", "sad", "anger"];
 console.log(q);
-// const path = `https://api.giphy.com/v1/gifs/search?&api_key=${apiKey}&q=${q[Math.floor(Math.random()*q.length)]}`;
-const path = `https://api.giphy.com/v1/gifs/search?&api_key=${apiKey}&q=${q}`;
+const path = `https://api.giphy.com/v1/gifs/search?&api_key=${apiKey}&q=${q[Math.floor(Math.random()*q.length)]}`;
+// const path = `https://api.giphy.com/v1/gifs/search?&api_key=${apiKey}&q=${q}`;
 console.log(path);
 
 // makes connection to server
