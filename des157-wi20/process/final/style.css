@@ -87,9 +87,12 @@ a{
   font-weight: bold;
 }
 
-.home{
-  height: 100vh;
+.home {
+  color: white;
+  height: 100vh !important;
+  margin:0 !important;
 }
+
 
 .home > .title{
   font-size: 150px;
@@ -101,7 +104,6 @@ a{
   font-size: 30px;
   line-height: 0px;
   font-family: 'Netflix Sans';
-  line-height: 0px;
 }
 
 
@@ -120,13 +122,6 @@ a{
   background-color: white;
   color: #161616;
 }
-
-.home {
-  color: white;
-  height: 100vh;
-  margin:0 !important;
-}
-
 
 .home > #background{
   background-color: #161616;
@@ -158,10 +153,6 @@ a{
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-}
-
-#potato{
-
 }
 
 .statistics-wrapper > div{
@@ -215,6 +206,11 @@ a{
   height: 70vh;
 }
 
+.prevention > h2{
+  font-style: italic;
+  font-size: 60px;
+  font-family: times-new-roman;
+}
 
 .prevention > #prevention-wrapper{
   display: flex;
@@ -396,6 +392,8 @@ a{
     padding-bottom: 40px;
     /* height: 100vh; */
   }
+
+
 
   .prevention > #prevention-wrapper{
     display: flex;

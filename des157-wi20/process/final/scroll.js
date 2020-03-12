@@ -1,17 +1,9 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
 const navLinks = document.querySelectorAll('nav ul li a');
+// const statistics = document.getElementById('statistics');
+//
+// statistics.forEach(function(statistics){
+//   statistics.addEventListener('click', smoothScroll);
+// });
 
 navLinks.forEach(function(eachLink){
   eachLink.addEventListener('click', smoothScroll);
